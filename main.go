@@ -9,13 +9,13 @@ import (
 )
 
 func ProxyAwareHttpClient() (*http.Client, error) {
-	proxyURL, err := url.Parse("http://proxyserver.hexmos.com:8080/")
+	proxyURL, err := url.Parse("http://ProxyServerName.com/")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "Invalid proxy url:", err)
 		return nil, err
 	}
 
-	proxyURL.User = url.UserPassword("proxyServer", "proxy22523146server")
+	proxyURL.User = url.UserPassword("usr_name_feild", "password_feild")
 
 	// Setup an HTTP client with a proxy transport
 	proxyTransport := &http.Transport{Proxy: http.ProxyURL(proxyURL)}
